@@ -67,6 +67,26 @@ The Axon Framework is a **java framework that is used to simplify the building o
  * the **Aggregate Root** is the Entity within the aggreagate that is responsible to **maintaing this consistent state**.
  * This make the aggregate the **Prime building block for Implementating a command Model in any CQRS based application**.
 
+more formal defination as Aric Evence the author of the book **'Domain driven design - techtic complexitty in the heart of Software'**
+Aggregate is the cluster of associate object that are trade as a unit for the purpose of Data change ,external reference are restricted to one member of the aggreagate designated as the root.A set of consitency rule within the aggregate boundry.
+
+Commands
+A Commands is a **comibinatoin of expressed intent**(which describe what you want to be done)as well as the information required to undertaken action bases on that intent.
+name as Verb in the **Imperative mood**. eg RegiseterUserCommand or DepositFundsCommands
+
+Events.
+Events are Objet that describe that something has Occured.
+A typical source of events is the aggreagate. **when something IMP has occured within the aggreaget , it will raise an event.**
+name with past participle verb eg UserRegisterdEvent or FundDepostedEvents.
+
+Query 
+express **desire for inforamation **. generally a specific representation of the state of the system.
+
+
+
+
+
+
 
 
 
