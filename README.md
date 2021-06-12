@@ -27,8 +27,8 @@ So , when a microservice fail only a single function or process becomes unavaila
 Core Principle of Microservices
 * Microservice **should not share code or data**.
 //if not,this could lead to fail multiple application of service like **tradition service oriented architecture** that are thight cooyple with eacht other.
-* Avoid **unnesscessary coupling** between service(low coupling) and software component
-coupling= degree of depends of software compoent   and cohision=measure 2 or more part work together to obtain better result than individual result.
+* Avoid **unnesscessary coupling** between service(low coupling) between software component
+coupling= degree of dependency of software compoent   and cohision=measure 2 or more part work together to obtain better result than individual result.
 * **Independence** and automancy is more Important than code re-usablilty.
 // do not repleat your self , even if code is duplicated.
 * Each Microservie is **responsible for single system** function or process.
