@@ -88,10 +88,24 @@ Software Preqreuisite
 * Maven
 * IDE Eclispe
 * Postman
-* DOcker
+* DOcker - installed as exe. from official site
 * Axon Platform
-* Mongo DB
-* My SQL
+* Mongo DB - docker Image 
+* My SQL - docker Image
+
+Docker Command as follow: on window 
+
+docker ps
+//error during connect: This error may indicate that the docker daemon is not running.: Get "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/containers/json": open //./pipe/docker_engine: The system cannot find the file specified. 
+
+https://www.coretechnologies.com/products/AlwaysUp/Install.html - no helped
+
+run docker desktop in window as applicatoin getting as
+Hardware assisted virtualization and data execution protection must be enabled in the BIOS. See https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization
+
+Go in Control Panel -> [Programs] -> [Windows Features] and completely uncheck all Hyper-V related components. Restart the system.
+
+Enable Hyper-V again. Restart.
 
 
 
