@@ -83,6 +83,19 @@ Query
 express **desire for inforamation**. generally a specific representation of the state of the system.
 
 
+Software Preqreuisite
+* java , min 8 > JDK 16 - jdk.java.net/16 till date
+* Maven
+* IDE Eclispe
+* Postman
+* DOcker
+* Axon Platform
+* Mongo DB
+* My SQL
+
+
+
+
 
 
 
