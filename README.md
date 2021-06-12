@@ -34,3 +34,40 @@ coupling= degree of dependency of software compoent   and cohision=measure 2 or 
 * Each Microservie is **responsible for single system** function or process.
 * Microservice **should not communicate directly** with each other.
 they should make use of the event/message bus to communicate with each other.
+
+CQRS
+CQRS is a software Design Patter thats stand for Command Query Responsiblity Segregation. CQRS suggests that the Application should be divided into Command and Query part. where Command is you to alter the state of an Object or Enitity and the Query is to return the Stote of an Object or Enitity.
+
+why do we need CQRS.
+this help us to scale Command and Query independently.
+Advantage  where the read are more than write or Visa Versa.
+So, we can optimise each for High Performance.
+
+Event Sourcing
+Event Sourcing define an approach, where all the **change** that are made to Object or Enitity, **are stored as a sequence of Immutable Events** to a event store.
+as opposed to storing just the current state.
+// this pattern offent used as cqpr pattern , materialing view to stored event
+
+Axon Platform
+* It consist of Axion Framework and the Axon server.
+The Axon Framework is a **java framework that is used to simplify the building of Event-driven microservice that are based on CQRS**.Event-sourcing and Domain-Driven Design.
+* //most important expect is the abstraction it provide.Axion is design such a ways its seperacte business login from infrastructre concerns.
+* with Axion business login is implement in class that interact with different message BUS. provide a number of building block like Aggreagete, Command Handler and Event Handler.
+* Axion server is **"out of the box message"** router and event store that **require no specific Configuration**.
+* //Axion need to create need Message BUS or Event store.
+* Axion provide you a degree of configuration
+ will used Axion to use Mongo DB than Embeded Event Store.
+ 
+ A few Important Concepts
+ Domain Model
+ A Domain Model describe the certain aspects of the system Domain that can be use **to solve the problems within that Domain**.
+ 
+ Aggregate
+ * Is an entity or group of entity that is **always kept in the consistent state(within a single ACID transaction)**
+ * the **Aggregate Root** is the Entity within the aggreagate that is responsible to **maintaing this consistent state**.
+ * This make the aggregate the **Prime building block for Implementating a command Model in any CQRS based application**.
+
+
+
+
+
