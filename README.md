@@ -80,7 +80,7 @@ A typical source of events is the aggreagate. **when something IMP has occured w
 name with past participle verb eg UserRegisterdEvent or FundDepostedEvents.
 
 Query 
-express **desire for inforamation **. generally a specific representation of the state of the system.
+express **desire for inforamation**. generally a specific representation of the state of the system.
 
 
 
