@@ -143,10 +143,27 @@ check localhost:27017 work find test connection and saved it by name 'Monog in d
 
 5.To install MySql
 Run in Docker as
-docker run -it -d --name mysql-container -p 3306:3306 --network springbankNet  -e MY_SQL_ROOT_PASSWORD=springbankRootPsw --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+docker run -it -d --name mysql-container -p 3306:3306 --network springbankNet  -e MYSQL_ROOT_PASSWORD=root -e  MYSQL_ROOT_PASSWORD:root -e     MYSQL_DATABASE:springbank -e   MYSQL_USER:docker -e    MYSQL_PASSWORD:docker --restart always -v mysql_data_container:/var/lib/mysql mysql:5.7
 
 6. installl admire client tool
 docker run -it -d --name adminer -p 8080:8080 --network springbankNet -e ADMIR_DEFAULT_SERVER=mysql-container --restart always adminer:latest
+
+ docker run -it -d --name mysql-container1 -p 3306:3306 --network springbankNet -e MYSQL_CONNECTION=mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=springbank -e MYSQL_USER=docker -e MYSQL_PASSWORD=docker -e MYSQL_HOST=mysql-container1 -e MYSQL_PORT=3306 --restart always -v mysql_data_container:/var/lib/mysql mysql:5.7
+ 
+ 
+ Steps
+ go to stater.spring.io
+ 
+ 1. choose group id eg com.springbank 
+ 2. artifact id user.cmd.api
+ 3.  then choose dependency for rest, lambok and spring security
+
+same for user.query.api , choose same depency but add spring data mongodb as well to connect to mongodb
+
+4. then select 
+ user.core - for authorization server just remove the Rest - since will expose no API
+ 
+ 
 
 
 
