@@ -125,7 +125,7 @@ reRun step 1 cmd
 
 2. need to install Axon Platfrom can do both way manual install or using docker
 
-docker run -d --name axon-server -p 8024:8024 -p 8124:8124 \ --network springbankNet \ --restart always axoniq/axonserver:latest
+docker run -d --name axon-server -p 8024:8024 -p 8124:8124  --network springbankNet --restart always axoniq/axonserver:latest
 // local means local to contain not localhost manchine
 // restart always means restart whenever need to avoid failer later , it will restart again and again when changes made
 // p means port external:internal port
@@ -163,6 +163,22 @@ same for user.query.api , choose same depency but add spring data mongodb as wel
 4. then select 
  user.core - for authorization server just remove the Rest - since will expose no API
  
+ 
+ -----------------------------------------------------------------------------------------
+ coding in eclispse
+ 1.create a simplet maven project with groupid org.springbank , aritfact id user.management version 1.0 Name and description Done.
+ 2. delete the scr default folder 
+ 3. extract all the spring zip in same folder , adjustcent to target folder by extrat Here (right click)
+
+pom.xml  we need to add all module under modules tag also add packing as POM
+making it a multi maven project 
+
+then since now we need to convert the user.core into library 
+to do that we need to give its pom version a proper name eg 1.0 and remove build section from pom.xml
+//delete the start point the application.java and testapplicatoin.java
+
+-----------------------------------------------------------------------------------------------------------
+Basic CQRS structure
  
 
 
