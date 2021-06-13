@@ -175,17 +175,53 @@ making it a multi maven project
 
 then since now we need to convert the user.core into library 
 to do that we need to give its pom version a proper name eg 1.0 and remove build section from pom.xml
-//delete the start point the application.java and testapplicatoin.java
+//delete the start point the application.java and testapplicatoin.java 
 
 -----------------------------------------------------------------------------------------------------------
 Basic CQRS structure
  
+cmd
+commands
+aggregates
+controller 
+dto
 
+core
+models
+events
+configuration - that is shared between cmd and Query
 
+query
+handlers
+repository
+querys
+controllers
+dto - to serials the data
 
+rename application.java of cmd and query including test to respiective name UserCmd and UserQUery
+note: got error internal call was not rename in mvn install
+-----------------------------------
+cmd pom.xml
 
+1 version 1.0.0
+2. add axon-spring-boot-starter dependency with  gid - org.axonframework version 4.4 
+// need one more dependency 
+ <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-bom</artifactId>
+            <version>4.5.0</version>
+  </dependency>
+and I will use this later
+<dependency>
+        <groupId>org.axonframework</groupId>
+        <artifactId>axon-test</artifactId>
+        <scope>test</scope>
+</dependency>
 
+after delete -> edit has undo option to delete in eclipse 
+not taking folder as build package path to create a class 
 
+https://stackoverflow.com/questions/6912169/eclipse-enable-autocomplete-content-assist
 
  
 
