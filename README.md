@@ -101,11 +101,60 @@ docker ps
 https://www.coretechnologies.com/products/AlwaysUp/Install.html - no helped
 
 run docker desktop in window as applicatoin getting as
-Hardware assisted virtualization and data execution protection must be enabled in the BIOS. See https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization
+Hardware assisted virtualization and data execution protection must be enabled in the BIOS. 
+See https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization
 
-Go in Control Panel -> [Programs] -> [Windows Features] and completely uncheck all Hyper-V related components. Restart the system.
+try this one 
+https://stackoverflow.com/questions/39684974/docker-for-windows-error-hardware-assisted-virtualization-and-data-execution-p
 
-Enable Hyper-V again. Restart.
+if not check virutilazation is up in Task Manager or system info Hypervisor enable, if not do it from BIOS and enable it
+
+Now,Docker is running
+
+Steps
+1. Docker Network : so that our container will be able to commmunicate with on another
+> docker network create --attachable -d overlay springbankNet
+attachable = allow to manual attach contain to this network 
+-d = specify network driver i.e overlay to span multiple docker host  since we are working with single docker host we can also change to bridge if we want.
+
+not working do did 
+> docker swarm init
+
+reRun step 1 cmd
+> docker network ls
+
+2. need to install Axon Platfrom can do both way manual install or using docker
+
+docker run -d --name axon-server -p 8024:8024 -p 8124:8124 \ --network springbankNet \ --restart always axoniq/axonserver:latest
+// local means local to contain not localhost manchine
+// restart always means restart whenever need to avoid failer later , it will restart again and again when changes made
+// p means port external:internal port
+
+3.verify in local browser  localhost:8024
+
+4. Install Mongo DB
+docker run -it -d --name mongo-container -p 27017:27017 --network springbankNet --restart always -v mongodb_data_container:/data/db mongo:latest
+//- v save or persist data nd share data we need volume
+the are just dir outside of file system exist as host file , so else will lose the data every thin we recreate this container
+
+//I just spelled latest wrong and got no image found error
+// I also instlled Robot 3t
+check localhost:27017 work find test connection and saved it by name 'Monog in docker'
+
+5.To install MySql
+Run in Docker as
+docker run -it -d --name mysql-container -p 3306:3306 --network springbankNet  -e MY_SQL_ROOT_PASSWORD=springbankRootPsw --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+
+6. installl admire client tool
+docker run -it -d --name adminer -p 8080:8080 --network springbankNet -e ADMIR_DEFAULT_SERVER=mysql-container --restart always adminer:latest
+
+
+
+
+
+
+
+ 
 
 
 
