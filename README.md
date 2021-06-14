@@ -169,6 +169,9 @@ same for user.query.api , choose same depency but add spring data mongodb as wel
  1.create a simplet maven project with groupid org.springbank , aritfact id user.management version 1.0 Name and description Done.
  2. delete the scr default folder 
  3. extract all the spring zip in same folder , adjustcent to target folder by extrat Here (right click)
+ // eclipse copy paste create issue with build path so import each at parent as maven existing project 
+ 
+ https://stackoverflow.com/questions/25897738/eclipse-multi-module-project-dependencies after unzip
 
 pom.xml  we need to add all module under modules tag also add packing as POM
 making it a multi maven project 
