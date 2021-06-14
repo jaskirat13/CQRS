@@ -174,7 +174,7 @@ same for user.query.api , choose same depency but add spring data mongodb as wel
  https://stackoverflow.com/questions/25897738/eclipse-multi-module-project-dependencies after unzip
 
 pom.xml  we need to add all module under modules tag also add packing as POM
-making it a multi maven project 
+making it a multi maven project  also right click ->propertis -> build -> check maven to work all pom.xml dependceny like spring boot
 
 then since now we need to convert the user.core into library 
 to do that we need to give its pom version a proper name eg 1.0 and remove build section from pom.xml
